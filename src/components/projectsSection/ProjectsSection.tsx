@@ -3,6 +3,7 @@ import { useInView, motion } from 'framer-motion';
 import styles from './ProjectsSection.module.scss';
 import ProjectGallery from './ProjectGallery';
 import useVisible from '../../hooks/useVisible';
+import { Element } from 'react-scroll';
 
 const DURATION_TIME: number = 0.5;
 
@@ -13,13 +14,12 @@ export default function ProjectsSection() {
   useVisible({ reference: ref, navBarSection: 'projects' });
 
   return (
-    <div className={styles.background}>
+    <Element name="projectsSection" className={styles.background}>
       <motion.div
         initial="hidden"
         animate={isInView ? 'show' : 'hidden'}
         ref={ref}
         className={styles.container}
-        id="projectsSection"
       >
         <motion.h1
           variants={{
@@ -51,6 +51,6 @@ export default function ProjectsSection() {
         ></motion.div>
         <ProjectGallery isInView={isInView} />
       </motion.div>
-    </div>
+    </Element>
   );
 }

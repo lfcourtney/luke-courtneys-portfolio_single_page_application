@@ -3,6 +3,7 @@ import { useInView, motion } from 'framer-motion';
 import styles from './ContactSection.module.scss';
 import useVisible from '../../hooks/useVisible';
 import emailjs from 'emailjs-com';
+import { Element } from 'react-scroll';
 
 const DURATION_TIME: number = 0.5;
 
@@ -74,13 +75,12 @@ export default function ContactSection() {
   }
 
   return (
-    <div className={styles.background}>
+    <Element name="contactSection" className={styles.background}>
       <motion.div
         initial="hidden"
         animate={isInView ? 'show' : 'hidden'}
         ref={ref}
         className={styles.container}
-        id="contactSection"
       >
         <motion.h1
           variants={{
@@ -170,6 +170,6 @@ export default function ContactSection() {
           </button>
         </motion.form>
       </motion.div>
-    </div>
+    </Element>
   );
 }

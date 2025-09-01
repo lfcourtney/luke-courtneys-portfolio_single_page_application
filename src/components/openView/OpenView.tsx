@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
 import styles from './OpenView.module.scss';
-import ScrollIntoView from 'react-scroll-into-view';
+import { Link, Element } from 'react-scroll';
 import useVisible from '../../hooks/useVisible';
 
 const OpenView = (): React.JSX.Element => {
@@ -9,18 +9,23 @@ const OpenView = (): React.JSX.Element => {
   useVisible({ reference: ref, navBarSection: 'home' });
 
   return (
-    <div ref={ref} className={styles.container} id="openView">
-      <div className={styles.containerChild}>
+    <Element className={styles.container} name="openView">
+      <div ref={ref} className={styles.containerChild}>
         <h1 className={styles.header}>Luke Courtney</h1>
         <hr className={styles.horizontalRule} />
         <h2 className={styles.subHeader}>Portfolio</h2>
-        <ScrollIntoView selector="#aboutSection" style={{ display: 'inline' }}>
+        <Link
+          to="aboutSection"
+          smooth={true}
+          duration={450}
+          style={{ display: 'inline' }}
+        >
           <i
             className={['fas', 'fa-chevron-down', styles.chevronDown].join(' ')}
           ></i>
-        </ScrollIntoView>
+        </Link>
       </div>
-    </div>
+    </Element>
   );
 };
 

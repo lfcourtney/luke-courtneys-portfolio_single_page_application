@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './MobileNavBar.module.scss';
-import ScrollIntoView from 'react-scroll-into-view';
+import { Link } from 'react-scroll';
 
 interface MobileNavBarProps {
   hamburgerOpen: boolean;
@@ -34,36 +34,46 @@ export default function MobileNavBar({
           >
             <div className={styles.mobileNavBarMenuContainer}>
               <ul>
-                <ScrollIntoView
-                  selector="#openView"
+                <Link
+                  to="openView"
+                  smooth={true}
+                  duration={450}
                   style={{ display: 'inline' }}
                 >
                   <li className={styles.mobileNavBarListItem}>HOME</li>
-                </ScrollIntoView>
-                <ScrollIntoView
-                  selector="#aboutSection"
+                </Link>
+                <Link
+                  to="aboutSection"
+                  smooth={true}
+                  duration={450}
                   style={{ display: 'inline' }}
                 >
                   <li className={styles.mobileNavBarListItem}>ABOUT</li>
-                </ScrollIntoView>
-                <ScrollIntoView
-                  selector="#projectsSection"
+                </Link>
+                <Link
+                  to="projectsSection"
+                  smooth={true}
+                  duration={450}
                   style={{ display: 'inline' }}
                 >
                   <li className={styles.mobileNavBarListItem}>PROJECTS</li>
-                </ScrollIntoView>
-                <ScrollIntoView
-                  selector="#experienceSection"
+                </Link>
+                <Link
+                  to="experienceSection"
+                  smooth={true}
+                  duration={450}
                   style={{ display: 'inline' }}
                 >
                   <li className={styles.mobileNavBarListItem}>EXPERIENCE</li>
-                </ScrollIntoView>
-                <ScrollIntoView
-                  selector="#contactSection"
+                </Link>
+                <Link
+                  to="contactSection"
+                  smooth={true}
+                  duration={450}
                   style={{ display: 'inline' }}
                 >
                   <li className={styles.mobileNavBarListItem}>CONTACT</li>
-                </ScrollIntoView>
+                </Link>
               </ul>
             </div>
           </motion.div>

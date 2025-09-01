@@ -1,5 +1,5 @@
 import styles from './DesktopNavBar.module.scss';
-import ScrollIntoView from 'react-scroll-into-view';
+import { Link } from 'react-scroll';
 import globalContext from '../../hooks/globalContext';
 import { useContext } from 'react';
 
@@ -10,7 +10,12 @@ export default function DesktopNavBar() {
     <div className={styles.desktopNavBar}>
       <div className={styles.desktopNavBarContainer}>
         <ul className={styles.desktopNavBarList}>
-          <ScrollIntoView selector="#openView" style={{ display: 'inline' }}>
+          <Link
+            to="openView"
+            smooth={true}
+            duration={450}
+            style={{ display: 'inline' }}
+          >
             <li
               className={styles.desktopNavBarListItem}
               style={{
@@ -19,9 +24,11 @@ export default function DesktopNavBar() {
             >
               HOME
             </li>
-          </ScrollIntoView>
-          <ScrollIntoView
-            selector="#aboutSection"
+          </Link>
+          <Link
+            to="aboutSection"
+            smooth={true}
+            duration={450}
             style={{ display: 'inline' }}
           >
             <li
@@ -32,9 +39,11 @@ export default function DesktopNavBar() {
             >
               ABOUT
             </li>
-          </ScrollIntoView>
-          <ScrollIntoView
-            selector="#projectsSection"
+          </Link>
+          <Link
+            to="projectsSection"
+            smooth={true}
+            duration={450}
             style={{ display: 'inline' }}
           >
             <li
@@ -45,9 +54,11 @@ export default function DesktopNavBar() {
             >
               PROJECTS
             </li>
-          </ScrollIntoView>
-          <ScrollIntoView
-            selector="#experienceSection"
+          </Link>
+          <Link
+            to="experienceSection"
+            smooth={true}
+            duration={450}
             style={{ display: 'inline' }}
           >
             <li
@@ -58,9 +69,11 @@ export default function DesktopNavBar() {
             >
               EXPERIENCE
             </li>
-          </ScrollIntoView>
-          <ScrollIntoView
-            selector="#contactSection"
+          </Link>
+          <Link
+            to="contactSection"
+            smooth={true}
+            duration={450}
             style={{ display: 'inline' }}
           >
             <li
@@ -71,7 +84,7 @@ export default function DesktopNavBar() {
             >
               CONTACT
             </li>
-          </ScrollIntoView>
+          </Link>
         </ul>
       </div>
       <div className={styles.desktopNavBarFooter}></div>
